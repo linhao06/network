@@ -1,0 +1,23 @@
+R1(config)#int fa0/0
+R1(config-if)#ip add 172.16.0.126 255.255.255.128
+R1(config-if)#no sh
+
+R1(config-if)#int se0/0
+R1(config-if)#ip add 10.10.10.1 255.255.255.0
+R1(config-if)#no sh
+
+-------------------------------------------------------
+
+R2(config)#int fa0/0
+R2(config-if)#ip add 172.16.0.254 255.255.255.128
+R2(config-if)#no sh
+
+R2(config-if)#int se0/0
+R2(config-if)#ip add 10.10.10.2 255.255.255.0
+R2(config-if)#no sh
+
+R2(config)#ip route 172.16.0.0 255.255.255.128 se0/0
+
+-------------------------------------------------------
+
+R1(config)#ip route 172.16.0.128 255.255.255.128 se0/0

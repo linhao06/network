@@ -1,0 +1,13 @@
+R1(config)#router ospf 111
+R1(config-router)#net 10.10.10.0 0.0.0.255 area 500
+R1(config-router)#net 172.16.0.0 0.0.0.255 area 500
+
+------------------------------------------------------
+
+R2(config)#router ospf 111
+R2(config-router)#net 192.168.0.0 0.0.0.255 area 500
+R2(config-router)#net 10.10.10.0 0.0.0.255 area 500
+
+------------------------------------------------------
+
+no router ospf 111 - router 삭제

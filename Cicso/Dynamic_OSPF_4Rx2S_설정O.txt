@@ -1,0 +1,25 @@
+R1(config)#router ospf 120
+R1(config-router)#net 172.16.0.0 0.0.0.255 area 0
+R1(config-router)#net 10.10.10.0 0.0.0.255 area 0
+R1(config-router)#net 30.30.30.0 0.0.0.255 area 0
+
+----------------------------------------------------
+
+R3(config)#router ospf 120
+R3(config-router)#net 192.168.0.0 0.0.0.255 area 10
+R3(config-router)#net 20.20.20.0 0.0.0.255 area 10
+R3(config-router)#net 40.40.40.0 0.0.0.255 area 10
+
+----------------------------------------------------
+
+R2(config)#router ospf 120
+R2(config-router)#net 10.10.10.0 0.0.0.255 area 0
+R2(config-router)#net 20.20.20.0 0.0.0.255 area 10
+
+----------------------------------------------------
+
+R4(config)#router ospf 120
+R4(config-router)#net 30.30.30.0 0.0.0.255 area 0
+R4(config-router)#net 40.40.40.0 0.0.0.255 area 10
+
+----------------------------------------------------

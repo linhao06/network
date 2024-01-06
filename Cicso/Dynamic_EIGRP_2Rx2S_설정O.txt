@@ -1,0 +1,14 @@
+R1(config)#router eigrp 100
+R1(config-router)#no auto-summary 
+R1(config-router)#net 10.10.10.0 0.0.0.255
+R1(config-router)#net 172.16.0.0 0.0.0.255
+
+-----------------------------------------------------------------
+
+R2(config)#router eigrp 100
+R2(config-router)#no auto-summary 
+R2(config-router)#net 10.10.10.0 0.0.0.255
+R2(config-router)#net 192.168.0.0 0.0.0.255
+
+-----------------------------------------------------------------
+
